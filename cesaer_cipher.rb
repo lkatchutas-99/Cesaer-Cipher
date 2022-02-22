@@ -44,9 +44,7 @@ def ceasar_cipher(txt, shift)
           end
         end
       end
-      unless /[^a-zA_Z0-9]/.match(letter)
-        arr.push(letter)
-      end
+      arr.push(letter)
       arr
     end.join
     puts cipher
