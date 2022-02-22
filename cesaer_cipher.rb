@@ -18,6 +18,16 @@ end
 
 shift_by_num = shift_by_num.to_i
 
+def analyze_letter (letter)
+  if letter == 'z'
+    letter = 'a'
+  elsif letter == 'Z'
+    letter = 'A'
+  else
+    letter = letter.next
+  end
+end
+
 def ceasar_cipher(txt, shift)
   unless shift == nil
 
@@ -25,23 +35,11 @@ def ceasar_cipher(txt, shift)
       unless /[^a-zA-Z0-9]/.match(letter)
         if shift < 0
           for i in (0...(26+shift))
-            if letter == 'z'
-              letter = 'a'
-            elsif letter == 'Z'
-              letter = 'A'
-            else
-              letter = letter.next
-            end
+            analyze_letter letter
           end
         else
           for i in (0...shift)
-            if letter == 'z'
-              letter = 'a'
-            elsif letter == 'Z'
-              letter = 'A'
-            else
-              letter = letter.next
-            end
+            analyze_letter letter
           end
         end
       end
