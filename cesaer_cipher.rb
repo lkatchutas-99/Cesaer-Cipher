@@ -26,6 +26,7 @@ def analyze_letter (letter)
   else
     letter = letter.next
   end
+  letter
 end
 
 def ceasar_cipher(txt, shift)
@@ -35,11 +36,11 @@ def ceasar_cipher(txt, shift)
       unless /[^a-zA-Z0-9]/.match(letter)
         if shift < 0
           for i in (0...(26+shift))
-            analyze_letter letter
+            letter = analyze_letter(letter)
           end
         else
           for i in (0...shift)
-            analyze_letter letter
+            letter = analyze_letter(letter)
           end
         end
       end
