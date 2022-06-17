@@ -1,17 +1,5 @@
 #/lib/caesar_cipher
 
-print 'This is Caesar Cipher, enter any text: '
-text = gets
-
-print 'Ok, now enter a number, negative numbers will shift the letter up the alphabet. Input '
-
-shift_by_num = nil
-
-until shift_by_num || /[0-9]/.match(shift_by_num)
-  print ' Must be number: '
-  shift_by_num = gets.to_i
-end
-
 def analyze_letter (letter)
   if letter.eql?('z')
     'a'
@@ -34,8 +22,7 @@ def ceasar_cipher(txt, shift)
     end
     arr.push(letter)
   end.join
-  puts "You wrote: #{origin_val} Your ceasaer cipher number with your inputed shift is: #{cipher_val}"
+  puts "You wrote: #{txt} Your ceasaer cipher number with your inputed shift is: #{cipher_val}"
   cipher_val
 end
 
-ceasar_cipher(text, shift_by_num)
