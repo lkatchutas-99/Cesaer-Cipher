@@ -10,7 +10,7 @@ def analyze_letter (letter)
   end
 end
 
-def ceasar_cipher(txt, shift)
+def caesar_cipher(txt, shift)
   return if shift.nil?
   
   shift = shift.to_i
@@ -22,7 +22,6 @@ def ceasar_cipher(txt, shift)
     end
     arr.push(letter)
   end.join
-  puts "You wrote: #{txt} Your ceasaer cipher number with your inputed shift is: #{cipher_val}"
+  puts "You wrote: #{txt}\nYour caesar cipher number is: #{cipher_val}"
   cipher_val
 end
-
