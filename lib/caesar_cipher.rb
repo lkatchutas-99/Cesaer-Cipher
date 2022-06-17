@@ -1,7 +1,11 @@
+#/lib/caesar_cipher
+
 print 'This is Caesar Cipher, enter any text: '
 text = gets
 
 print 'Ok, now enter a number, negative numbers will shift the letter up the alphabet. Input '
+
+shift_by_num = nil
 
 until shift_by_num || /[0-9]/.match(shift_by_num)
   print ' Must be number: '
